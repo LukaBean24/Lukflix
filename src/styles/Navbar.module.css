@@ -60,3 +60,9 @@
 .navlinks p:hover {
   color: white;
 }
+
+@media (max-width: 749px) {
+  .navlinks {
+    display: none;
+  }
+}
