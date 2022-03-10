@@ -1,0 +1,32 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.777);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.link {
+  text-decoration: none;
+  text-align: center;
+}
+
+.link p {
+  color: #e50914;
+  font-size: 80px;
+  margin: 0 2rem;
+  transition: 0.2s ease;
+  font-family: 'League Gothic', sans-serif;
+  letter-spacing: 0.07rem;
+  position: relative;
+}
+
+.link p:hover {
+  color: white;
+}
