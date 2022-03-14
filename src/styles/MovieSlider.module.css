@@ -1,0 +1,19 @@
+.movieSlider_container {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+}
+
+.movieSlider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.slider_title {
+  margin: 0 2rem;
+  font-size: 40px;
+  letter-spacing: 0.2rem;
+}

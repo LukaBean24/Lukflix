@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import MainSlider from '../components/MainSlider'
 import Navbar from '../components/Navbar'
 import SkeletonLoad from '../components/SkeletonLoad'
+import SkeletonLoadGrid from '../components/SkeletonLoadGrid'
+import MovieSlider from '../components/MovieSlider'
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(true)
@@ -28,6 +30,11 @@ const Home = () => {
     <>
       <Navbar />
       {isLoaded ? <MainSlider data={popularMovie} /> : <SkeletonLoad />}
+      {isLoaded ? (
+        <MovieSlider title='Top Rated' data={popularMovie} />
+      ) : (
+        <SkeletonLoadGrid />
+      )}
     </>
   )
 }

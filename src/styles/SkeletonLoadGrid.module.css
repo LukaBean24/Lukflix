@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  height: 190px;
+  margin: 2rem 0;
+  padding: 0 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.container span {
+  width: 100%;
+  height: 100%;
+  animation: skeleton-loading infinite 1s alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    opacity: 0.7;
+    background-color: rgb(204, 204, 204);
+  }
+  100% {
+    opacity: 0.7;
+    background-color: rgb(139, 139, 139);
+  }
+}
