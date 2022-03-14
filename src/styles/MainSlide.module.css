@@ -28,6 +28,7 @@
   height: 70%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   top: 50%;
   left: 10%;
   transform: translate(-10%, -50%);
@@ -50,7 +51,40 @@
 .desc_container {
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
+}
+
+.buttons-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: 2rem 0;
+}
+
+.buttons-container button {
+  width: 250px;
+  height: 45px;
+  margin: 0 2rem;
+  padding: 0rem 1rem;
+  color: white;
+  border: none;
+  background-color: #e50914;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.buttons-container button:nth-child(1) {
+  background-color: gray;
+}
+
+.buttons-container button:nth-child(1):hover {
+  background-color: rgb(82, 82, 82);
+}
+
+.buttons-container button:hover {
+  background-color: #860007;
 }
 
 .desc_container p {
