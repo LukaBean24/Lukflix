@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import Card from './Card'
 import classes from '../styles/MovieSlider.module.css'
 
-const MovieSlider = ({ title, data }) => {
+const MovieSlider = ({ title, data, type, watchlist }) => {
   var settings = {
     dots: false,
     arrows: false,
@@ -46,7 +46,14 @@ const MovieSlider = ({ title, data }) => {
         {data &&
           data.length > 0 &&
           data.map((movie) => {
-            return <Card data={movie} />
+            return (
+              <Card
+                data={movie}
+                key={movie.id}
+                type={type}
+                watchlist={watchlist}
+              />
+            )
           })}
       </Slider>
     </div>
