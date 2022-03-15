@@ -1,0 +1,128 @@
+.modal-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.553);
+  z-index: 10;
+}
+.container {
+  border-radius: 10px 10px 0 0;
+  width: 50%;
+  height: 550px;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(58, 58, 58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.main:hover {
+  background-color: rgb(41, 41, 41);
+}
+
+.active {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: black;
+}
+
+.img-container {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 300px;
+  background-color: blue;
+  position: relative;
+}
+
+.shadow {
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent, rgb(0, 0, 0));
+}
+
+.img-container img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.desc,
+.information {
+  width: 100%;
+  height: 250px;
+  background-color: rgb(58, 58, 58);
+  border-radius: 0 0 10px 10px;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+.information {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+.title {
+  margin: 0.5rem 0;
+}
+
+.title h2 {
+  letter-spacing: 0.2rem;
+  font-size: 40px;
+}
+
+.movie-desc {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.05rem;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: white;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #e50914;
+}

@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import MainSlider from '../components/MainSlider'
 import MovieSlider from '../components/MovieSlider'
 import Navbar from '../components/Navbar'
 import SkeletonLoad from '../components/SkeletonLoad'
 import SkeletonLoadGrid from '../components/SkeletonLoadGrid'
+import Tabs from '../components/Tabs'
 
 const Series = () => {
   const [popular, setPopular] = useState([])
   const [isLoaded, setIsLoaded] = useState(true)
+  const modalIsOpen = useSelector((state) => state.ui.modalIsOpen)
+  const modalData = useSelector((state) => state.ui.data)
 
   useEffect(() => {
     getPopular()
@@ -26,11 +30,17 @@ const Series = () => {
         setIsLoaded(true)
       })
   }
+
   return (
     <>
+      {modalIsOpen && <Tabs data={modalData} />}
       <Navbar />
       {isLoaded ? <MainSlider data={popular} /> : <SkeletonLoad />}
-      {isLoaded ? <MovieSlider data={popular} /> : <SkeletonLoadGrid />}
+      {isLoaded ? (
+        <MovieSlider title='Popular Series' data={popular} />
+      ) : (
+        <SkeletonLoadGrid />
+      )}
     </>
   )
 }

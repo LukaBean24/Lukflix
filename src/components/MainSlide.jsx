@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { watchlistActions } from '../store/watchlist-slice'
+import { uiActions } from '../store/ui-slice'
 import classes from '../styles/MainSlide.module.css'
 
 const MainSlide = ({ data, type }) => {
@@ -22,7 +23,13 @@ const MainSlide = ({ data, type }) => {
           <h2>{data.name || data.title}</h2>
         </div>
         <div className={classes['buttons-container']}>
-          <button>See More</button>
+          <button
+            onClick={() => {
+              dispatch(uiActions.openModal(data))
+            }}
+          >
+            See More
+          </button>
           <button
             onClick={() => {
               dispatch(watchlistActions.addMovie(data))
