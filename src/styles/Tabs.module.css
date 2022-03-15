@@ -126,3 +126,15 @@
 .close:hover {
   color: #e50914;
 }
+
+@media (max-width: 1028px) {
+  .container {
+    width: 90%;
+    height: auto;
+  }
+
+  .desc,
+  .information {
+    height: auto;
+  }
+}
