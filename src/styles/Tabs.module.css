@@ -15,6 +15,7 @@
   width: 50%;
   height: 550px;
   position: relative;
+  z-index: 3;
 }
 
 .header {
