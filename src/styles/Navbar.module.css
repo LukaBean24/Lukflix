@@ -76,7 +76,7 @@
   cursor: pointer;
   overflow: hidden;
   display: none;
-  z-index: 10;
+  z-index: 2;
 }
 
 .burger span {
