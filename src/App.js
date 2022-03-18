@@ -5,11 +5,13 @@ import Series from './pages/Series'
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/series' element={<Series />} />
-      <Route path='/watchlist' element={<Watchlist />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/series' element={<Series />} />
+        <Route path='/watchlist' element={<Watchlist />} />
+      </Routes>
+    </>
   )
 }
 

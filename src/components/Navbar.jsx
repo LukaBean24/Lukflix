@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { uiActions } from '../store/ui-slice'
@@ -22,13 +22,31 @@ const Navbar = () => {
             </Link>
           </div>
           <div className={classes.navlinks}>
-            <Link to='/' className={classes.link}>
+            <Link
+              onClick={() => {
+                dispatch(uiActions.updateSearchData(null))
+              }}
+              to='/'
+              className={classes.link}
+            >
               <p>Home</p>
             </Link>
-            <Link to='/series' className={classes.link}>
+            <Link
+              onClick={() => {
+                dispatch(uiActions.updateSearchData(null))
+              }}
+              to='/series'
+              className={classes.link}
+            >
               <p>Series</p>
             </Link>
-            <Link to='/watchlist' className={classes.link}>
+            <Link
+              to='/watchlist'
+              className={classes.link}
+              onClick={() => {
+                dispatch(uiActions.updateSearchData(null))
+              }}
+            >
               <p>Watchlist</p>
             </Link>
           </div>

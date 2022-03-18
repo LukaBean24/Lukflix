@@ -1,9 +1,20 @@
 .card {
-  width: 330px;
-  height: 200px;
-  background-color: gray;
+  width: 320px;
+  height: 450px;
+  animation: loading 1s alternate linear infinite;
   position: relative;
   overflow: hidden;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.7;
+    background-color: rgb(204, 204, 204);
+  }
+  100% {
+    opacity: 0.7;
+    background-color: rgb(139, 139, 139);
+  }
 }
 
 .card img {
@@ -11,6 +22,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: 0.2s ease;
 }
 
 .card_shadow {
@@ -30,6 +42,10 @@
 
 .card:hover .card_shadow {
   bottom: 0;
+}
+
+.card:hover img {
+  transform: scale(1.1);
 }
 
 .title {

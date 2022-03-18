@@ -7,7 +7,7 @@ const MovieSlider = ({ title, data, type, watchlist }) => {
   var settings = {
     dots: false,
     arrows: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -16,8 +16,8 @@ const MovieSlider = ({ title, data, type, watchlist }) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           infinite: true,
           dots: false,
         },
@@ -25,9 +25,9 @@ const MovieSlider = ({ title, data, type, watchlist }) => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
           dots: false,
         },
       },

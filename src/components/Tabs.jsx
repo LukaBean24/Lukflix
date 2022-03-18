@@ -6,6 +6,34 @@ import { useDispatch, useSelector } from 'react-redux'
 import { uiActions } from '../store/ui-slice'
 
 const Tabs = () => {
+  const container = {
+    hidden: {
+      scale: 1,
+      opacity: 0,
+      // y: 200,
+    },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      //y: 0,
+    },
+    exit: {
+      scale: 0,
+      opacity: 1,
+      y: 200,
+    },
+  }
+
+  const items = {
+    hidden: {
+      y: 200,
+      opacity: 1,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  }
   const [number, setNumber] = useState(1)
   const dispatch = useDispatch()
   const movieData = useSelector((state) => state.ui.data)
@@ -18,20 +46,55 @@ const Tabs = () => {
     >
       <AnimatePresence>
         <motion.div
+          variants={container}
+          initial='hidden'
+          animate='visible'
+          exit='exit'
           onClick={(e) => e.stopPropagation()}
-          initial={{ y: -800 }}
-          animate={{ y: 0 }}
-          exit={{ y: -800 }}
           className={classes.container}
         >
-          <div className={classes['img-container']}>
+          <motion.div
+            className={classes['img-container']}
+            variants={items}
+            initial='hidden'
+            animate='visible'
+          >
             <div className={classes.shadow}></div>
-            <img
-              src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path}`}
-              alt='Poster'
-            />
-          </div>
-          <div className={classes.header}>
+            {movieData.backdrop_path !== null &&
+            movieData.backdrop_path !== undefined ? (
+              <img
+                src={`https://image.tmdb.org/t/p/original${movieData.poster_path}`}
+                alt='Poster'
+              />
+            ) : (
+              <div
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  backgroundColor: 'black',
+                }}
+              >
+                <h1
+                  style={{
+                    color: 'red',
+                    letterSpacing: '0.3rem',
+                    fontSize: '55px',
+                  }}
+                >
+                  LUKFLIX
+                </h1>
+              </div>
+            )}
+          </motion.div>
+          <motion.div
+            variants={items}
+            initial='hidden'
+            animate='visible'
+            className={classes.header}
+          >
             <AiOutlineCloseCircle
               className={classes.close}
               onClick={() => {
@@ -54,19 +117,29 @@ const Tabs = () => {
             >
               Information
             </span>
-          </div>
+          </motion.div>
           {number === 1 && (
-            <div className={classes.desc}>
+            <motion.div
+              variants={items}
+              initial='hidden'
+              animate='visible'
+              className={classes.desc}
+            >
               <div className={classes.title}>
                 <h2>{movieData.title || movieData.name}</h2>
               </div>
               <div className={classes['movie-desc']}>
                 <p>{movieData.overview}</p>
               </div>
-            </div>
+            </motion.div>
           )}
           {number === 2 && (
-            <div className={classes.information}>
+            <motion.div
+              className={classes.information}
+              variants={items}
+              initial='hidden'
+              animate='visible'
+            >
               <span>
                 Release Date:{' '}
                 {movieData.release_date || movieData.first_air_date}{' '}
@@ -81,7 +154,7 @@ const Tabs = () => {
                   ? 'Suaitable For All Ages'
                   : 'For Adults'}
               </span>
-            </div>
+            </motion.div>
           )}
         </motion.div>
       </AnimatePresence>

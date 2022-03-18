@@ -6,6 +6,7 @@ import SkeletonLoadGrid from '../components/SkeletonLoadGrid'
 import MovieSlider from '../components/MovieSlider'
 import { useSelector } from 'react-redux'
 import Tabs from '../components/Tabs'
+import SearchBar from '../components/SearchBar'
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(true)
@@ -84,6 +85,7 @@ const Home = () => {
       ) : (
         <SkeletonLoad />
       )}
+      <SearchBar />
       {isLoaded ? (
         <MovieSlider
           title='Most Popular'
@@ -93,7 +95,7 @@ const Home = () => {
       ) : (
         <SkeletonLoadGrid />
       )}
-      {/* {isLoaded ? (
+      {isLoaded ? (
         <MovieSlider title='Now Playing' data={nowPlaying} />
       ) : (
         <SkeletonLoadGrid />
@@ -107,7 +109,7 @@ const Home = () => {
         <MovieSlider title='Upcoming Movies' data={upcoming} />
       ) : (
         <SkeletonLoadGrid />
-      )} */}
+      )}
     </>
   )
 }

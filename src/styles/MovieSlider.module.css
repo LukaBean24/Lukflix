@@ -6,15 +6,30 @@
 
 .movieSlider {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   padding: 2rem;
 }
 
 .slider_title {
-  margin: 0 2rem;
+  margin: 2rem 2rem;
   font-size: 30px;
   letter-spacing: 0.2rem;
   font-weight: 100;
+}
+
+.left_arrow,
+.right_arrow {
+  height: 450px;
+  width: 350px;
+  background-color: rgba(0, 0, 0, 0.237);
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  transform: scale(1);
+}
+
+.left_arrow:hover,
+.right_arrow:hover {
+  background-color: black;
+  transform: scale(1.1);
 }

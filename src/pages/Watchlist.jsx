@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Navbar from '../components/Navbar'
 import { useSelector } from 'react-redux'
-import classes from '../styles/Watchlist.module.css'
 import Card from '../components/Card'
 import Tabs from '../components/Tabs'
+import Grid from '../components/Grid'
 
 const Watchlist = () => {
   const watchlist = useSelector((state) => state.watchlist.watchlist)
@@ -13,15 +13,13 @@ const Watchlist = () => {
     <>
       {modalIsOpen && <Tabs data={modalData} />}
       <Navbar />
-      <div className={classes.container}>
-        <div className={classes['grid-container']}>
-          {watchlist &&
-            watchlist.length > 0 &&
-            watchlist.map((movie) => {
-              return <Card key={movie.id} data={movie} watchlist={true} />
-            })}
-        </div>
-      </div>
+      <Grid>
+        {watchlist &&
+          watchlist.length > 0 &&
+          watchlist.map((movie) => {
+            return <Card key={movie.id} data={movie} watchlist={true} />
+          })}
+      </Grid>
     </>
   )
 }
